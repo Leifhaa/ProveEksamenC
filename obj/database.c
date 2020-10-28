@@ -41,19 +41,15 @@ int CreateDatabase()
 }
 
 
-int AddEntry(int iDbHwnd, char *szName){
-    //Todo: free it.
-    char *name = malloc(MAX_NAME_SZ);
-    if (name == NULL){
-        printf("Out of memory\r\n");
-        return 1;
-    }
+int AddEntry(int iDbHwnd){
+    //See: https://stackoverflow.com/questions/13542055/how-to-do-scanf-for-single-char-in-c
+    char name[MAX_NAME_SZ];
     printf("Enter name: ");
     fgets(name, MAX_NAME_SZ, stdin);
     /* Remove trailing newline, if there. */
-    if ((strlen(name) > 0) && (name[strlen (name) - 1] == '\n'))
+    if ((strlen(name) > 0) && (name[strlen (name) - 1] == '\n')){
         name[strlen (name) - 1] = '\0';
-
+    }
     printf("Your name is %s.", name);
 
     DATABASE* dbHandle = (DATABASE*)iDbHwnd;

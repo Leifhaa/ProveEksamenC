@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "../include/database.h"
-#include <string.h>
 
 void printMenu(){
     printf("Welcome to main menu! Please enter a number between [1-5]\r\n");
@@ -12,15 +12,19 @@ void printMenu(){
 }
 
 void getUserInput(int *tmpInput){
+    char line[256];
     int iNew = 0;
+
     while (iNew < 1 || iNew > 5){
         printf("Enter a number between 1-5:");
-        int iOk = scanf("%d", &iNew);
-        if (iOk == 0){
-            //https://stackoverflow.com/questions/5087062/how-can-i-get-an-int-from-stdio-in-c
-            //Allowing user to input string without breaking program.
-            while (fgetc(stdin) != '\n');
-        }
+        fgets(line, sizeof(line), stdin);
+        iNew = atoi(line);
+        //int iOk = scanf("%d", &iNew);
+        //if (iOk == 0){
+        //    //https://stackoverflow.com/questions/5087062/how-can-i-get-an-int-from-stdio-in-c
+        //    //Allowing user to input string without breaking program.
+        //    while (fgetc(stdin) != '\n');
+        //}
     }
     *tmpInput = iNew;
 }
@@ -41,7 +45,7 @@ int main() {
             switch(iInput){
                 case 1:
                     printf("Add element selected\r\n");
-                    AddEntry(dbHwnd, "SampleData");
+                    AddEntry(dbHwnd);
                     break;
                 case 2:
                     printf("Find element selected\r\n");

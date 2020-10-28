@@ -7,6 +7,6 @@
 
 int PrintMe();
 int CreateDatabase();
-int AddEntry(int iDbHwnd, char *szName);
+int AddEntry(int iDbHwnd);
 
 #endif //PROVEEKSAMEN_DATABASE_H
