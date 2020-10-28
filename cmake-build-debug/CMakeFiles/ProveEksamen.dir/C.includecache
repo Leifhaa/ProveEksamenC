@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/include/database.h
+
+C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/obj/database.c
+stdio.h
+-
+../include/database.h
+C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/include/database.h
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+

@@ -1,0 +1,3 @@
+C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/cmake-build-debug/CMakeFiles/ProveEksamen.dir
+C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/cmake-build-debug/CMakeFiles/rebuild_cache.dir
