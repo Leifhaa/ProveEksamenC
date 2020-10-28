@@ -5,8 +5,11 @@
 #ifndef PROVEEKSAMEN_DATABASE_H
 #define PROVEEKSAMEN_DATABASE_H
 
-int PrintMe();
+
 int CreateDatabase(int *iDbHwnd);
 int AddEntry(int iDbHwnd);
+int CountRecords(int iDbHwnd);
+void PrintDatabase(int iDbHwnd);
+void DeleteRecord(int iDbHwnd);
 
 #endif //PROVEEKSAMEN_DATABASE_H

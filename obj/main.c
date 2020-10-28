@@ -53,9 +53,12 @@ int main() {
                     break;
                 case 3:
                     printf("Count elements selected\r\n");
+                    int dbSize = CountRecords(dbHwnd);
+                    printf("Size is: %d\r\n", dbSize);
                     break;
                 case 4:
                     printf("Delete element selected\r\n");
+                    DeleteRecord(dbHwnd);
                     break;
                 case 5:
                     printf("Exit selected\r\n");
