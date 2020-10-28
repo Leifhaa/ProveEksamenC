@@ -32,9 +32,10 @@ void getUserInput(int *tmpInput){
 int main() {
     setbuf(stdout, 0);
     int iInput = 0;
+    int dbHwnd = 0;
 
-    int dbHwnd = CreateDatabase();
-    if (dbHwnd == 0){
+    int iOk = CreateDatabase(&dbHwnd);
+    if (iOk == 0){
         printf("Failed to initialize database");
     }
     else{

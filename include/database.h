@@ -6,7 +6,7 @@
 #define PROVEEKSAMEN_DATABASE_H
 
 int PrintMe();
-int CreateDatabase();
+int CreateDatabase(int *iDbHwnd);
 int AddEntry(int iDbHwnd);
 
 #endif //PROVEEKSAMEN_DATABASE_H

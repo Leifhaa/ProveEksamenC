@@ -20,13 +20,14 @@ typedef struct _NODE{
 typedef struct _DATABASE{
     struct _NODE *pHead;
     struct _NODE *pTail;
+    long iSize;
 } DATABASE;
 
 int PrintMe(){
     printf("Hello from database!");
 }
 
-int CreateDatabase()
+int CreateDatabase(int *iDbHwnd)
 {
     printf("Created database!");
     DATABASE *newDb = malloc(sizeof(DATABASE));
@@ -36,8 +37,10 @@ int CreateDatabase()
     }
     newDb->pHead = NULL;
     newDb->pTail = NULL;
+    newDb->iSize = 0;
     //Casting to an int as main doesn't know the database struct.
-    return (int)newDb;
+    *iDbHwnd = (int)newDb;
+    return 1;
 }
 
 
@@ -63,12 +66,21 @@ int AddEntry(int iDbHwnd){
         //First entry
         dbHandle->pHead = pNewNode;
         dbHandle->pTail = pNewNode;
+
+        pNewNode->pPrev = NULL;
+        pNewNode->pNext = NULL;
     }
     else{
         dbHandle->pTail->pNext = pNewNode;
         pNewNode->pPrev = dbHandle->pTail;
         dbHandle->pTail = pNewNode;
+        pNewNode->pNext = NULL;
     }
+    dbHandle->iSize++;
     return 1;
+}
+
+int CountRecords(int iDbHwnd){
+
 }
 
