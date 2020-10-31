@@ -27,4 +27,8 @@ stdbool.h
 -
 assert.h
 -
+stdio.h
+-
+stdlib.h
+-
 

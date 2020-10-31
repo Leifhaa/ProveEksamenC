@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
 #define MAX_NAME_SZ 256
 #define dbFileName "db.dat"
 
@@ -29,7 +31,7 @@ typedef struct _DATABASE{
 
 int CreateDatabase(int *iDbHwnd)
 {
-    printf("Created database!");
+    printf("Created database!\r\n");
     DATABASE *newDb = malloc(sizeof(DATABASE));
     if (newDb == NULL){
         printf("Failed to malloc database");
@@ -43,18 +45,19 @@ int CreateDatabase(int *iDbHwnd)
     return 1;
 }
 
-
-int createRecord(int iDbHwnd){
-    //See: https://stackoverflow.com/questions/13542055/how-to-do-scanf-for-single-char-in-c
+int inputRecord(int iDbHwnd){
     char name[MAX_NAME_SZ];
     printf("Enter name: ");
     fgets(name, MAX_NAME_SZ, stdin);
+    createRecord(iDbHwnd, name);
+}
+
+int createRecord(int iDbHwnd, char *name){
+    //See: https://stackoverflow.com/questions/13542055/how-to-do-scanf-for-single-char-in-c
     /* Remove trailing newline, if there. */
     if ((strlen(name) > 0) && (name[strlen (name) - 1] == '\n')){
         name[strlen (name) - 1] = '\0';
     }
-    printf("Your name is %s.", name);
-
 
     NODE *pNewNode = malloc(sizeof(NODE));
     if (pNewNode == NULL){
@@ -187,16 +190,33 @@ int printNode(int iDbHwnd){
 
 int writeToDisk(int dbHwnd){
     DATABASE*   dbHandle = (DATABASE*)dbHwnd;
-    FILE        *fb;
-    fb = fopen(dbFileName, "wb");
+    FILE        *fp;
+    fp = fopen(dbFileName, "wb");
 
-    if (fb != NULL){
+    if (fp != NULL){
         NODE *pTmpNode = dbHandle->pHead;
         while (pTmpNode != NULL){
-            fprintf(fb, "%s\r\n", pTmpNode->szName);
+            fprintf(fp, "%s\n", pTmpNode->szName);
             pTmpNode = pTmpNode->pNext;
         }
-        fclose(fb);
+        fclose(fp);
+    }
+}
+
+int readFromDisk(int dbHwnd){
+    //Todo: Add debugger with proper errno.
+    DATABASE*   dbHandle = (DATABASE*)dbHwnd;
+    FILE        *fp;
+
+    fp = fopen(dbFileName, "rb");
+    if (fp != NULL){
+        //Set the file position of the stream to offset end file.
+        char cBuff[MAX_NAME_SZ];
+        while (fgets(cBuff, MAX_NAME_SZ, fp)){
+            //Read from current file position
+            createRecord(dbHwnd, cBuff);
+        }
+        fclose(fp);
     }
 }
 

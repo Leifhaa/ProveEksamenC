@@ -25,6 +25,7 @@ int main() {
         printf("Failed to initialize database");
     }
     else{
+        readFromDisk(dbHwnd);
         while (iInput != 5){
             printMenu();
             iInput = getInputInRange(1,6);
@@ -32,7 +33,7 @@ int main() {
             switch(iInput){
                 case 1:
                     printf("Add element selected\r\n");
-                    createRecord(dbHwnd);
+                    inputRecord(dbHwnd);
                     break;
                 case 2:
                     printf("Find element selected\r\n");
