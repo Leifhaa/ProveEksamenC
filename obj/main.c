@@ -32,7 +32,7 @@ int main() {
             switch(iInput){
                 case 1:
                     printf("Add element selected\r\n");
-                    AddEntry(dbHwnd);
+                    createRecord(dbHwnd);
                     break;
                 case 2:
                     printf("Find element selected\r\n");
@@ -49,6 +49,7 @@ int main() {
                     break;
                 case 5:
                     printf("Exit selected\r\n");
+                    writeToDisk(dbHwnd);
                     break;
                 case 6:
                     printf("Deleting database\r\n");

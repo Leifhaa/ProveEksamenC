@@ -10,13 +10,14 @@
 #include <stdbool.h>
 #include <assert.h>
 #define MAX_NAME_SZ 256
+#define dbFileName "db.dat"
 
 
 
 typedef struct _NODE{
     struct _NODE *pNext;
     struct _NODE *pPrev;
-    char szName[80];
+    char szName[MAX_NAME_SZ];
 } NODE;
 
 typedef struct _DATABASE{
@@ -43,7 +44,7 @@ int CreateDatabase(int *iDbHwnd)
 }
 
 
-int AddEntry(int iDbHwnd){
+int createRecord(int iDbHwnd){
     //See: https://stackoverflow.com/questions/13542055/how-to-do-scanf-for-single-char-in-c
     char name[MAX_NAME_SZ];
     printf("Enter name: ");
@@ -54,37 +55,45 @@ int AddEntry(int iDbHwnd){
     }
     printf("Your name is %s.", name);
 
-    DATABASE* dbHandle = (DATABASE*)iDbHwnd;
+
     NODE *pNewNode = malloc(sizeof(NODE));
     if (pNewNode == NULL){
         printf("Failed to malloc new entry");
         return 0;
     }
     strcpy(pNewNode->szName, name);
-    if (dbHandle->pHead == NULL){
-        //First entry
-        dbHandle->pHead = pNewNode;
-        dbHandle->pTail = pNewNode;
-
-        pNewNode->pPrev = NULL;
-        pNewNode->pNext = NULL;
-    }
-    else{
-        dbHandle->pTail->pNext = pNewNode;
-        pNewNode->pPrev = dbHandle->pTail;
-        dbHandle->pTail = pNewNode;
-        pNewNode->pNext = NULL;
-    }
-    dbHandle->iSize++;
+    saveRecord(iDbHwnd, (int) pNewNode);
     return 1;
 }
+
+int saveRecord(int iDbHwnd, int iNode){
+    DATABASE* dbHandle = (DATABASE*)iDbHwnd;
+    NODE* pNode =(NODE *)iNode;
+    if (dbHandle->pHead == NULL){
+        //First entry
+        dbHandle->pHead = pNode;
+        dbHandle->pTail = pNode;
+
+        pNode->pPrev = NULL;
+        pNode->pNext = NULL;
+    }
+    else{
+        dbHandle->pTail->pNext = pNode;
+        pNode->pPrev = dbHandle->pTail;
+        dbHandle->pTail = pNode;
+        pNode->pNext = NULL;
+    }
+    dbHandle->iSize++;
+}
+
+
 
 int CountRecords(int iDbHwnd){
     DATABASE* dbHandle = (DATABASE*)iDbHwnd;
     return dbHandle->iSize;
 }
 
-void PrintDatabase(int iDbHwnd){
+void PrintAllRecords(int iDbHwnd){
     DATABASE* dbHandle = (DATABASE*)iDbHwnd;
     int index = 0;
     NODE *pTmp = dbHandle->pHead;
@@ -103,7 +112,7 @@ void DeleteRecord(int iDbHwnd){
         printf("No records in database yet!\r\n");
         return;
     }
-    PrintDatabase(iDbHwnd);
+    PrintAllRecords(iDbHwnd);
     printf("Enter a index record to delete\r\n");
 
     int iInput = getInputInRange(0, dbHandle->iSize - 1);
@@ -174,6 +183,21 @@ int printNode(int iDbHwnd){
         pTmpNode = pTmpNode->pNext;
     }
     printf("Node text: %s\r\n", pTmpNode->szName);
+}
+
+int writeToDisk(int dbHwnd){
+    DATABASE*   dbHandle = (DATABASE*)dbHwnd;
+    FILE        *fb;
+    fb = fopen(dbFileName, "wb");
+
+    if (fb != NULL){
+        NODE *pTmpNode = dbHandle->pHead;
+        while (pTmpNode != NULL){
+            fprintf(fb, "%s\r\n", pTmpNode->szName);
+            pTmpNode = pTmpNode->pNext;
+        }
+        fclose(fb);
+    }
 }
 
 

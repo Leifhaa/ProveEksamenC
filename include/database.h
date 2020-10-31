@@ -7,11 +7,13 @@
 
 
 int CreateDatabase(int *iDbHwnd);
-int AddEntry(int iDbHwnd);
+int createRecord(int iDbHwnd);
+int saveRecord(int iDbHwnd, int iNode);
 int CountRecords(int iDbHwnd);
-void PrintDatabase(int iDbHwnd);
+void PrintAllRecords(int iDbHwnd);
 void DeleteRecord(int iDbHwnd);
 int deleteDatabase(int iDbHwnd);
 int printNode(int iDbHwnd);
+int writeToDisk(int dbHwnd);
 
 #endif //PROVEEKSAMEN_DATABASE_H
