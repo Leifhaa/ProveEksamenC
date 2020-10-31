@@ -162,5 +162,19 @@ int deleteDatabase(int idbHwnd){
     printf("Deleted\r\n");
 }
 
+int printNode(int iDbHwnd){
+    DATABASE*   dbHandle = (DATABASE*)iDbHwnd;
+    if (dbHandle->iSize == 0){
+        printf("Database is empty!\r\n");
+        return 0;
+    }
+    int iInput = getInputInRange(0, dbHandle->iSize - 1);
+    NODE *pTmpNode = dbHandle->pHead;;
+    for (int i = 0; i < iInput; i++){
+        pTmpNode = pTmpNode->pNext;
+    }
+    printf("Node text: %s\r\n", pTmpNode->szName);
+}
+
 
 

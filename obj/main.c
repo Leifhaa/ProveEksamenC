@@ -36,6 +36,7 @@ int main() {
                     break;
                 case 2:
                     printf("Find element selected\r\n");
+                    printNode(dbHwnd);
                     break;
                 case 3:
                     printf("Count elements selected\r\n");
