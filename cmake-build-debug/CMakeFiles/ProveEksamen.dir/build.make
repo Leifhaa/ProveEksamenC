@@ -99,19 +99,61 @@ CMakeFiles\ProveEksamen.dir\obj\database.c.s: cmake_force
  /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ProveEksamen.dir\obj\database.c.s /c C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\obj\database.c
 <<
 
+CMakeFiles\ProveEksamen.dir\input.c.obj: CMakeFiles\ProveEksamen.dir\flags.make
+CMakeFiles\ProveEksamen.dir\input.c.obj: ..\input.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ProveEksamen.dir/input.c.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ProveEksamen.dir\input.c.obj /FdCMakeFiles\ProveEksamen.dir\ /FS -c C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\input.c
+<<
+
+CMakeFiles\ProveEksamen.dir\input.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProveEksamen.dir/input.c.i"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\ProveEksamen.dir\input.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\input.c
+<<
+
+CMakeFiles\ProveEksamen.dir\input.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProveEksamen.dir/input.c.s"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ProveEksamen.dir\input.c.s /c C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\input.c
+<<
+
+CMakeFiles\ProveEksamen.dir\inputParser.c.obj: CMakeFiles\ProveEksamen.dir\flags.make
+CMakeFiles\ProveEksamen.dir\inputParser.c.obj: ..\inputParser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ProveEksamen.dir/inputParser.c.obj"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoCMakeFiles\ProveEksamen.dir\inputParser.c.obj /FdCMakeFiles\ProveEksamen.dir\ /FS -c C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\inputParser.c
+<<
+
+CMakeFiles\ProveEksamen.dir\inputParser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProveEksamen.dir/inputParser.c.i"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\ProveEksamen.dir\inputParser.c.i @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\inputParser.c
+<<
+
+CMakeFiles\ProveEksamen.dir\inputParser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProveEksamen.dir/inputParser.c.s"
+	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) /FoNUL /FAs /FaCMakeFiles\ProveEksamen.dir\inputParser.c.s /c C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\inputParser.c
+<<
+
 # Object files for target ProveEksamen
 ProveEksamen_OBJECTS = \
 "CMakeFiles\ProveEksamen.dir\obj\main.c.obj" \
-"CMakeFiles\ProveEksamen.dir\obj\database.c.obj"
+"CMakeFiles\ProveEksamen.dir\obj\database.c.obj" \
+"CMakeFiles\ProveEksamen.dir\input.c.obj" \
+"CMakeFiles\ProveEksamen.dir\inputParser.c.obj"
 
 # External object files for target ProveEksamen
 ProveEksamen_EXTERNAL_OBJECTS =
 
 ProveEksamen.exe: CMakeFiles\ProveEksamen.dir\obj\main.c.obj
 ProveEksamen.exe: CMakeFiles\ProveEksamen.dir\obj\database.c.obj
+ProveEksamen.exe: CMakeFiles\ProveEksamen.dir\input.c.obj
+ProveEksamen.exe: CMakeFiles\ProveEksamen.dir\inputParser.c.obj
 ProveEksamen.exe: CMakeFiles\ProveEksamen.dir\build.make
 ProveEksamen.exe: CMakeFiles\ProveEksamen.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable ProveEksamen.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable ProveEksamen.exe"
 	"C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\ProveEksamen.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\ProveEksamen.dir\objects1.rsp @<<
  /out:ProveEksamen.exe /implib:ProveEksamen.lib /pdb:C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\ProveEksamen.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

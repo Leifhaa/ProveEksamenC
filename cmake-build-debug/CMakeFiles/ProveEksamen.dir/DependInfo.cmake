@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/input.c" "C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/cmake-build-debug/CMakeFiles/ProveEksamen.dir/input.c.obj"
+  "C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/inputParser.c" "C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/cmake-build-debug/CMakeFiles/ProveEksamen.dir/inputParser.c.obj"
   "C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/obj/database.c" "C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/cmake-build-debug/CMakeFiles/ProveEksamen.dir/obj/database.c.obj"
   "C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/obj/main.c" "C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/cmake-build-debug/CMakeFiles/ProveEksamen.dir/obj/main.c.obj"
   )

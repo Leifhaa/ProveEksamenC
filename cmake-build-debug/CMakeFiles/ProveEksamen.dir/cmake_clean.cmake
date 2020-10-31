@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ProveEksamen.dir/input.c.obj"
+  "CMakeFiles/ProveEksamen.dir/inputParser.c.obj"
   "CMakeFiles/ProveEksamen.dir/obj/database.c.obj"
   "CMakeFiles/ProveEksamen.dir/obj/main.c.obj"
   "ProveEksamen.exe"

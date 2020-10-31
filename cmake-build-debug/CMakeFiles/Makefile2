@@ -78,12 +78,12 @@ clean: CMakeFiles\ProveEksamen.dir\clean
 CMakeFiles\ProveEksamen.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProveEksamen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProveEksamen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target ProveEksamen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target ProveEksamen"
 .PHONY : CMakeFiles\ProveEksamen.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\ProveEksamen.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Leifh\OneDrive\Desktop\Skole\C_programming_assignments\ProveEksamen\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles\ProveEksamen.dir\rule

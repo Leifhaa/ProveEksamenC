@@ -127,6 +127,60 @@ ProveEksamen\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProveEksamen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\build
 .PHONY : ProveEksamen\fast
 
+input.obj: input.c.obj
+
+.PHONY : input.obj
+
+# target to build an object file
+input.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProveEksamen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\input.c.obj
+.PHONY : input.c.obj
+
+input.i: input.c.i
+
+.PHONY : input.i
+
+# target to preprocess a source file
+input.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProveEksamen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\input.c.i
+.PHONY : input.c.i
+
+input.s: input.c.s
+
+.PHONY : input.s
+
+# target to generate assembly for a file
+input.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProveEksamen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\input.c.s
+.PHONY : input.c.s
+
+inputParser.obj: inputParser.c.obj
+
+.PHONY : inputParser.obj
+
+# target to build an object file
+inputParser.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProveEksamen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\inputParser.c.obj
+.PHONY : inputParser.c.obj
+
+inputParser.i: inputParser.c.i
+
+.PHONY : inputParser.i
+
+# target to preprocess a source file
+inputParser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProveEksamen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\inputParser.c.i
+.PHONY : inputParser.c.i
+
+inputParser.s: inputParser.c.s
+
+.PHONY : inputParser.s
+
+# target to generate assembly for a file
+inputParser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ProveEksamen.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ProveEksamen.dir\inputParser.c.s
+.PHONY : inputParser.c.s
+
 obj\database.obj: obj\database.c.obj
 
 .PHONY : obj\database.obj
@@ -190,6 +244,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... ProveEksamen
+	@echo ... input.obj
+	@echo ... input.i
+	@echo ... input.s
+	@echo ... inputParser.obj
+	@echo ... inputParser.i
+	@echo ... inputParser.s
 	@echo ... obj/database.obj
 	@echo ... obj/database.i
 	@echo ... obj/database.s

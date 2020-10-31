@@ -3,10 +3,12 @@
 //
 #include <stdio.h>
 #include "../include/database.h"
+#include "../include/input.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <assert.h>
 #define MAX_NAME_SZ 256
 
 
@@ -90,47 +92,55 @@ void PrintDatabase(int iDbHwnd){
     int index = 0;
     NODE *pTmp = dbHandle->pHead;
     while (pTmp != NULL){
-        index++;
         printf("[%d] - %s \r\n", index, pTmp->szName);
+        index++;
         pTmp = pTmp->pNext;
     }
 }
 
-//Inspired by: https://stackoverflow.com/questions/14176123/correct-usage-of-strtol (but not equal)
-int parseLong(const char *cInput, int *parsed){
-    char *endPtr;
-    *parsed = strtol(cInput, &endPtr, 0);
-    if (endPtr == cInput || *endPtr != '\0'){
-        return 0;
-    }
-    if ((parsed == LONG_MAX || parsed == LONG_MIN) && errno == ERANGE)
-    {
-        return 0;
-    }
-    return 1;
-}
 
 void DeleteRecord(int iDbHwnd){
-    printf("Enter a index record to delete\r\n");
+    //If no records, return already
+    DATABASE*   dbHandle = (DATABASE*)iDbHwnd;
+    if (dbHandle->iSize == 0){
+        printf("No records in database yet!\r\n");
+        return;
+    }
     PrintDatabase(iDbHwnd);
-    DATABASE* dbHandle = (DATABASE*)iDbHwnd;
-    char cInput[10];
-    int iInput = -1;
+    printf("Enter a index record to delete\r\n");
 
-    while (iInput < 0 || iInput > dbHandle->iSize){
-        printf("Enter a number between 1-5:");
-        fgets(cInput, sizeof(cInput), stdin);
-        /* Remove trailing newline, if there. */
-        if ((strlen(cInput) > 0) && (cInput[strlen (cInput) - 1] == '\n')){
-            cInput[strlen (cInput) - 1] = '\0';
+    int iInput = getInputInRange(0, dbHandle->iSize - 1);
+    NODE *tmpNode = dbHandle->pHead;
+    for (int i = 0; i < iInput; i++){
+        assert(tmpNode->pNext != NULL);
+        tmpNode = tmpNode->pNext;
+    }
+    if (dbHandle->pHead == dbHandle->pTail){
+        //Only one record
+        dbHandle->pHead = NULL;
+        dbHandle->pTail = NULL;
+    }
+    else {
+        //Database has multiple records
+        if (tmpNode == dbHandle->pHead){
+            //Deleting head
+            tmpNode->pNext->pPrev = NULL;
+            dbHandle->pHead = tmpNode->pNext;
         }
-        int tmpInput = 0;
-        if (parseLong(cInput,&tmpInput)){
-            iInput = tmpInput;
+        else if (tmpNode == dbHandle->pTail){
+            //Deleting tail
+            tmpNode->pPrev->pNext = NULL;
+            dbHandle->pTail = tmpNode->pPrev;
+        }
+        else{
+            //Deleting body
+            tmpNode->pPrev->pNext = tmpNode->pNext;
+            tmpNode->pNext->pPrev = tmpNode->pPrev;
         }
     }
-
-    
+    free(tmpNode);
+    tmpNode = NULL;
+    dbHandle->iSize--;
 }
 
 

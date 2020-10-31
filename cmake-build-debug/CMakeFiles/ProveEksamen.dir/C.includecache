@@ -8,11 +8,15 @@
 
 C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/include/database.h
 
+C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/include/input.h
+
 C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/obj/database.c
 stdio.h
 -
 ../include/database.h
 C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/include/database.h
+../include/input.h
+C:/Users/Leifh/OneDrive/Desktop/Skole/C_programming_assignments/ProveEksamen/include/input.h
 stdlib.h
 -
 string.h
@@ -20,5 +24,7 @@ string.h
 stdio.h
 -
 stdbool.h
+-
+assert.h
 -
 
