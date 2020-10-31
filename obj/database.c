@@ -25,9 +25,6 @@ typedef struct _DATABASE{
     long iSize;
 } DATABASE;
 
-int PrintMe(){
-    printf("Hello from database!");
-}
 
 int CreateDatabase(int *iDbHwnd)
 {
@@ -143,6 +140,27 @@ void DeleteRecord(int iDbHwnd){
     dbHandle->iSize--;
 }
 
+
+int deleteDatabase(int idbHwnd){
+    DATABASE*   dbHandle = (DATABASE*)idbHwnd;
+    if (dbHandle->iSize != 0){
+        //Has records
+        while (dbHandle->pHead != dbHandle->pTail){
+            dbHandle->pHead = dbHandle->pHead->pNext;
+            free(dbHandle->pHead->pPrev);
+            dbHandle->pHead->pPrev = NULL;
+            dbHandle->iSize--;
+        }
+        //Head is equal to tail
+        free(dbHandle->pHead);
+        dbHandle->pHead = NULL;
+        dbHandle->pTail = NULL;
+        dbHandle->iSize--;
+    }
+    free(dbHandle);
+    dbHandle = NULL;
+    printf("Deleted\r\n");
+}
 
 
 

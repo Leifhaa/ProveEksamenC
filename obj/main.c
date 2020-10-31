@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/database.h"
+#include "../include/input.h"
 
 void printMenu(){
     printf("Welcome to main menu! Please enter a number between [1-5]\r\n");
@@ -9,25 +10,10 @@ void printMenu(){
     printf("[3] - Count number of elements in database\r\n");
     printf("[4] - Delete element from database\r\n");
     printf("[5] - Exit\r\n");
+    printf("[6] - Delete database\r\n");
+
 }
 
-void getUserInput(int *tmpInput){
-    char line[256];
-    int iNew = 0;
-
-    while (iNew < 1 || iNew > 5){
-        printf("Enter a number between 1-5:");
-        fgets(line, sizeof(line), stdin);
-        iNew = atoi(line);
-        //int iOk = scanf("%d", &iNew);
-        //if (iOk == 0){
-        //    //https://stackoverflow.com/questions/5087062/how-can-i-get-an-int-from-stdio-in-c
-        //    //Allowing user to input string without breaking program.
-        //    while (fgetc(stdin) != '\n');
-        //}
-    }
-    *tmpInput = iNew;
-}
 
 int main() {
     setbuf(stdout, 0);
@@ -41,7 +27,7 @@ int main() {
     else{
         while (iInput != 5){
             printMenu();
-            getUserInput(&iInput);
+            iInput = getInputInRange(1,6);
             printf("Input selected(%d)\r\n",iInput);
             switch(iInput){
                 case 1:
@@ -62,6 +48,10 @@ int main() {
                     break;
                 case 5:
                     printf("Exit selected\r\n");
+                    break;
+                case 6:
+                    printf("Deleting database\r\n");
+                    deleteDatabase(dbHwnd);
                     break;
             }
         }

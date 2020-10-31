@@ -13,5 +13,6 @@ CMakeFiles\ProveEksamen.dir\obj\database.c.obj: ..\include\input.h
 CMakeFiles\ProveEksamen.dir\obj\database.c.obj: ..\obj\database.c
 
 CMakeFiles\ProveEksamen.dir\obj\main.c.obj: ..\include\database.h
+CMakeFiles\ProveEksamen.dir\obj\main.c.obj: ..\include\input.h
 CMakeFiles\ProveEksamen.dir\obj\main.c.obj: ..\obj\main.c
 

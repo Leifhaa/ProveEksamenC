@@ -11,5 +11,6 @@ int AddEntry(int iDbHwnd);
 int CountRecords(int iDbHwnd);
 void PrintDatabase(int iDbHwnd);
 void DeleteRecord(int iDbHwnd);
+int deleteDatabase(int iDbHwnd);
 
 #endif //PROVEEKSAMEN_DATABASE_H
